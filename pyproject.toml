@@ -1,0 +1,42 @@
+[project]
+name = "realtime_metsprite"
+dynamic = ["version"]
+authors = [
+  { name="Owen O'D"},
+]
+description = "Load realtime metsprite data"
+readme = "README.md"
+requires-python = ">=3.12.0"
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+]
+
+
+dependencies = [
+  "xarray",
+  "influxdb-client",
+  "python-dateutil",
+  "pytz",
+  "xrft",
+  "numpy",
+  "pandas",
+  "scipy",
+  "matplotlib",
+  "cmcrameri",
+  "ipykernel",
+  "requests",
+  "fiona",
+  "geopandas",
+  "cartopy",
+  "beautifulsoup4",
+  "lxml"
+]
+
+[project.optional-dependencies]
+test = ['pytest']
+
+
+[project.urls]
+Homepage = "https://github.com/owenodriscoll/ORCESTRA"
