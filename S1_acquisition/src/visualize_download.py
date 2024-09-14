@@ -104,12 +104,12 @@ def save_figure(fig: matplotlib.figure.Figure,
     return
 
 
-def plot_save_kml(gdf, **kwargs) -> None: 
+def plot_save_kml(gdf, **kwargs) -> matplotlib.figure.Figure: 
      
     fig = visualize_kml(gdf, **kwargs)
     save_figure(fig)
 
-    return
+    return fig
 
 
 if __name__ == "__main__":
