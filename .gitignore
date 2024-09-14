@@ -311,3 +311,5 @@ data/*
 *.kml
 *.txt
 *.egg-info
+*__pycache__
+*.png

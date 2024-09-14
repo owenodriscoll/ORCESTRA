@@ -5,6 +5,9 @@ import logging
 from pathlib import Path
 from typing import Union
 
+from S1_acquisition.src.read_kml import find_open_kml
+from S1_acquisition.src.visualize_download import plot_save_kml
+
 
 url = "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/acquisition-plans"
 pattern = "s1a_mp_user"
@@ -70,15 +73,26 @@ def check_for_new_file():
 
             download_new_file(latest_file_url, latest_file_name)
             save_downloaded_file(latest_file_name)
+
+            return True
         else:
             logging.info("No new file found. Latest file is up-to-date.")
     else:
         logging.info("No download links found containing 's1a_mp_user'.")
 
 if __name__ == "__main__":
+
     logging.info("Script started.")
     try:
-        check_for_new_file()
+        new_download = check_for_new_file()
+        
+        if new_download:
+            gdf, filename = find_open_kml() 
+            plot_save_kml(gdf=gdf)
+
     except Exception as e:
         logging.info(e)
     logging.info("Script finished.")
+
+    
+
