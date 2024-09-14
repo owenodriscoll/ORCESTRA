@@ -15,10 +15,7 @@ classifiers = [
 
 
 dependencies = [
-  "xarray",
-  "numpy",
   "pandas",
-  "scipy",
   "matplotlib",
   "cmcrameri",
   "ipykernel",
