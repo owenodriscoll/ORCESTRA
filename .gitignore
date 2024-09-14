@@ -310,3 +310,4 @@ data/*
 *.log
 *.kml
 *.txt
+*.egg-info
