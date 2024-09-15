@@ -82,13 +82,16 @@ def check_for_new_file():
 
 if __name__ == "__main__":
 
+    bounds = [-75., 0., -0., 25.]
+
     logging.info("Script started.")
     try:
         new_download = check_for_new_file()
         
-        if new_download:
+        if True:
             gdf, filename = find_open_kml() 
-            plot_save_kml(gdf=gdf)
+            plot_save_kml(gdf=gdf,
+                          bounds=bounds)
 
     except Exception as e:
         logging.info(e)
