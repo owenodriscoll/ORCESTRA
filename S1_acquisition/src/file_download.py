@@ -5,7 +5,7 @@ import logging
 from pathlib import Path
 from typing import Union
 
-from S1_acquisition.src.read_kml import find_open_kml
+from S1_acquisition.src.file_read import find_open_kml
 from S1_acquisition.src.visualisation import plot_save_kml
 
 

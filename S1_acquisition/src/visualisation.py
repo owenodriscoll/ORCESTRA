@@ -11,7 +11,7 @@ from matplotlib.colors import ListedColormap
 from typing import Union
 from pathlib import Path
 
-from S1_acquisition.src.read_kml import find_open_kml
+from S1_acquisition.src.file_read import find_open_kml
 from S1_acquisition.src.misc.utils import find_number_days_df, find_start_date_df
 
 plt.rcParams.update({'font.size': 10, 'font.weight' : 'bold'})
