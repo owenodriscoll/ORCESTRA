@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Union
 
 from S1_acquisition.src.read_kml import find_open_kml
-from S1_acquisition.src.visualize_download import plot_save_kml
+from S1_acquisition.src.visualisation import plot_save_kml
 
 
 url = "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/acquisition-plans"
