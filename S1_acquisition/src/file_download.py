@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import os
 import logging
 from pathlib import Path
-from typing import Union
+from typing import Union, Literal
 
 from S1_acquisition.src.file_read import find_open_kml
 from S1_acquisition.src.visualisation import plot_save_kml
@@ -50,7 +50,7 @@ def download_new_file(file_url, file_name, timeout: int = 60) -> None:
     logging.info(f"Downloaded new file: {file_name}")
 
 
-def check_for_new_file():
+def check_for_new_file() -> (Literal[True] | None):
     response = requests.get(url)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, 'lxml')
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     try:
         new_download = check_for_new_file()
         
-        if True:
+        if new_download:
             gdf, filename = find_open_kml() 
             plot_save_kml(gdf=gdf,
                           bounds=bounds)
