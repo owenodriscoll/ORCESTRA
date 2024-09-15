@@ -2,7 +2,7 @@ Repository containing sub projects directly related to ORCESTRA campaign
 
 - `S1_acquistion`: downloads and visualizes the latest Sentinel-1 acquistion plan
 
-## 1. Run Cronjob
+## Prepare evironment
 
 Create the correct environment
 
@@ -21,6 +21,7 @@ Install packages within `pyproject.toml`
 pip install -e .
 ```
 
+## Option 1. Set up automated cron job
 Run the Bash script `ORCESTRA/S1_acquisition/cron_task/task.sh` (and optionally set the cron update frequency in this file)
 
 ```bash
@@ -29,7 +30,7 @@ bash path/to/ORCESTRA/S1_acquisition/cron_task/task.sh
 
 This will start a recurring cron job scheduled for 10 am every day that looks for and downloads/visualizes updated acquistion plans
 
-## 2. Run manually
+## Option 2. Run manually
 
 To run the script manually use
 
