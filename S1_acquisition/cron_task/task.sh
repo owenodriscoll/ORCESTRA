@@ -46,7 +46,7 @@ fi
 echo "Found script at: $path_script"
 
 # echo new cron task into cron file
-echo "* 10 * * * source $path_conda $env && $path_python $path_script" >> mycron
+echo "0 10 * * * source $path_conda $env && $path_python $path_script" >> mycron
 
 # # for testing
 # source $path_conda $env && $path_python $path_script
