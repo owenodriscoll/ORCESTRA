@@ -21,3 +21,11 @@ def find_number_days_df(df, date_column: str):
 def find_start_date_df(df, date_column: str):
     start_date = df.iloc[0][date_column]
     return start_date
+
+
+def rename_file_if_exists(old_name: Path, new_name: Path) -> None:
+    # Check if the file exists
+    if old_name.is_file():
+        # Rename the file
+        old_name.rename(new_name)
+    return

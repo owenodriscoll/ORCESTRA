@@ -313,3 +313,4 @@ TSWLatexianTemp*
 *.egg-info
 *__pycache__
 *S1_acquisition_plan.png
+*S1_acquisition_plan_previous.png

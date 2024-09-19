@@ -7,6 +7,7 @@ from typing import Union, Literal
 
 from S1_acquisition.src.file_read import find_open_kml
 from S1_acquisition.src.visualisation import plot_save_kml
+from S1_acquisition.src.misc.utils import rename_file_if_exists
 
 
 url = "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/acquisition-plans"
@@ -90,8 +91,20 @@ if __name__ == "__main__":
         
         if new_download:
             gdf, filename = find_open_kml() 
-            plot_save_kml(gdf=gdf,
-                          bounds=bounds)
+
+            path_figs = Path(__file__).parents[1].joinpath("figures")
+            path_old_fig =path_figs.joinpath("S1_acquisition_plan.png") 
+            path_renamed_old_fig =path_figs.joinpath("S1_acquisition_plan_previous.png") 
+
+            rename_file_if_exists(
+                old_name=path_old_fig,
+                new_name=path_renamed_old_fig
+                )
+
+            plot_save_kml(
+                gdf=gdf,
+                bounds=bounds
+                )
 
     except Exception as e:
         logging.info(e)
