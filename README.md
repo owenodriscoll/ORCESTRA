@@ -10,9 +10,10 @@ Create the correct environment
 conda create -n ENVNAME python=3.12
 conda activate ENVNAME
 ```
-Navigate to the correct directory
+Clone repository and navigate to the correct directory
 
 ```bash
+git clone git@github.com:owenodriscoll/ORCESTRA.git
 cd ORCESTRA
 ```
 Install packages within `pyproject.toml`
