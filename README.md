@@ -7,26 +7,26 @@ Repository containing sub projects directly related to ORCESTRA campaign
 Create the correct environment
 
 ```bash
-conda create -n ENVNAME python=3.12
-conda activate ENVNAME
+$ conda create -n ENVNAME python=3.12
+$ conda activate ENVNAME
 ```
 Clone repository and navigate to the correct directory
 
 ```bash
-git clone git@github.com:owenodriscoll/ORCESTRA.git
-cd ORCESTRA
+$ git clone git@github.com:owenodriscoll/ORCESTRA.git
+$ cd ORCESTRA
 ```
 Install packages within `pyproject.toml`
 
 ```bash
-pip install -e .
+$ pip install -e .
 ```
 
 ## Option 1. Set up automated cron job
 Run the Bash script `ORCESTRA/S1_acquisition/cron_task/task.sh` (and optionally set the cron update frequency in this file)
 
 ```bash
-bash path/to/ORCESTRA/S1_acquisition/cron_task/task.sh
+$ bash path/to/ORCESTRA/S1_acquisition/cron_task/task.sh
 ```
 
 This will start a recurring cron job scheduled for 10 am every day that looks for and downloads/visualizes updated acquistion plans
@@ -36,7 +36,7 @@ This will start a recurring cron job scheduled for 10 am every day that looks fo
 To run the script manually use
 
 ```bash
-python path/to/ORCESTRA/S1_acquisition/src/file_download.py
+$ python path/to/ORCESTRA/S1_acquisition/src/file_download.py
 ```
 
 To change the domain size or plotting settings you can modify parameters in either `visualisation.py` or `file_download.py` (ugly, I know).
