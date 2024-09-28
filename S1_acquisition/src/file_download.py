@@ -17,6 +17,7 @@ pattern = "s1a_mp_user"
 path_relative_dir = Path(__file__).parents[1]
 path_relative_dir.mkdir(parents=True, exist_ok=True)
 directory_download = Path.joinpath(path_relative_dir, "data") 
+directory_download.mkdir(parents=True, exist_ok=True)
 files_downloaded = Path.joinpath(path_relative_dir, "cron_task/last_downloaded.txt") 
 file_log = Path.joinpath(path_relative_dir, "cron_task/logfile.log") 
 
